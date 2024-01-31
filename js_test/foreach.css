@@ -1,0 +1,208 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Roboto Slab', serif;
+            cursor: pointer;
+            background: linear-gradient(to right, black, yellow);
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            padding: 30px 70px;
+            background-color: chartreuse;
+
+        }
+
+      
+        
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-area {
+            list-style: none;
+        }
+
+        .nav-area li {
+            display: inline-block;
+            padding: 0px 15px;
+            text-transform: uppercase;
+        }
+
+        .studata {
+
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        .storage {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: black;
+            color: white;
+            width: 70%;
+            height: fit-content;
+            border: 20px solid #ff003f;
+        }
+
+        table th {
+
+            background-color: #3b5998;
+        }
+
+        td,
+        th {
+            border: 2px solid;
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(238, 188, 38, 0.884);
+        }
+
+        table :hover {
+            border: 3px solid #ceff00;
+
+        }
+
+        header:hover {
+            box-sizing: border-box;
+            background-color: turquoise;
+            border-radius: 2px;
+
+        }
+
+        a:hover {
+            box-sizing: border-box;
+            background-color: chartreuse;
+            padding: 20px;
+            border-radius: 4px;
+            color: black;
+
+        }
+        
+
+        footer a {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            left: 20%;
+            background-color: #3b5998;
+            padding: 30px;
+            font-size: 20px;
+            color: white;
+            font-weight: 900;
+
+        }
+
+        @media (min-width: 300px) and (max-width: 780px) {
+
+
+            .storage {
+
+                display: flex;
+                place-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            header {
+
+                font-size: 10px;
+            }
+
+
+
+            nav {
+                width: 100px;
+                height: 100%;
+                background-color: royalblue;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+            }
+          
+          
+
+            nav ul {
+                
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+            }
+
+            nav ul li {
+                color: white;
+                margin: 2px;
+              text-align:center;
+            }
+
+            ul li a {
+                color: white;
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 3px;
+                
+            }
+            
+            .studata {
+
+                width: 70%;
+                position: relative;
+                left: 125px;
+
+            }
+
+            table {
+                border: 10px solid #ff003f;
+                border-radius: 5px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            header:hover {
+
+                background-color: turquoise;
+                border-radius: 2px;
+
+            }
+
+            a:hover {
+                box-sizing: border-box;
+                background-color: rgb(0, 217, 255);
+                padding: 2px;
+                color: black;
+                font-weight: solid;
+                border-radius: 0.2px;
+
+            }
+
+            footer {
+                display: none;
+            }
+        }

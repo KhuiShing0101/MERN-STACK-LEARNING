@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+</head>
+<body>
+    <h1>Product Listing</h1>
+    <li id="productList">
+    </li>
+</body>
+<script type="module" src="data/data.js"></script>
+<script type="module">
+        // Import the products array from the external file
+        import products from './data/data.js';
+
+        // Access the ul element by its ID
+        const productList = document.getElementById('productList');
+
+        // Function to create and append product list items
+        function renderProducts() {
+            // Clear existing content
+            productList.innerHTML = '';
+
+            // Iterate through products and create list items
+            products.forEach(product => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.title} - ${product.price.toFixed(2)}`;
+                productList.appendChild(listItem);
+            });
+        }
+        renderProducts();
+</script>
+</html>
