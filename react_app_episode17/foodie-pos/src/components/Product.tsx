@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material"
 
 interface Product{
+    id   : "number",
     name : "string",
     price: "number",
 }
@@ -14,7 +15,8 @@ const Product = ({products}:Props)=>{
         <Box>{
             products.map((product)=>{
                 return(
-                    <Typography>{product.name} 
+                    <Typography sx={{ m:5 }} key={product.id}>
+                        {product.name} 
                         <br/>
                         {product.price}
                     </Typography>

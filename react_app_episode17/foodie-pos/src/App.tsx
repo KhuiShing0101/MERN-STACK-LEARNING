@@ -6,7 +6,6 @@ import Product from "./components/Product";
 const App = () => {
   console.log("parent Render")
 
-  // const [num,stageNum] = useState<number>(1);
   const [products,stagingProduct] = useState<Product[]>([]);
   const getProducts = async ()=>{
     const response = await fetch('http://localhost:5000/')
