@@ -3,12 +3,15 @@ import bodyParser from 'body-parser'
 import fs from 'fs'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import checkAuth from './auth'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 const PORT = 3000
 
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended : true}))
+app.use(cookieParser())
 
     let users:{email:string; password:string}[] = [];
 
@@ -38,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended : true}))
     })
 
     app.post('/sign-in',(req:Request,res:Response)=>{
-
+        console.log("here");
         const {email,password} = req.body
             if(!email || !password){
                 return res.status(400).send('please fill email and password')
@@ -60,6 +63,10 @@ app.use(bodyParser.urlencoded({ extended : true}))
     })
 
     app.post('/log-out',()=>{})
+
+    app.get('/data',checkAuth,(req:Request,res:Response)=>{
+        res.sendFile(__dirname + '/data/app-data.json');
+    })
 
     app.get('/',(req:Request,res:Response)=>{
         res.sendFile(__dirname + '/index.html')
