@@ -10,6 +10,13 @@ const PORT = 5000
 app.use(express.json())
 app.use(cors())
 
+interface Menu{
+    name:string
+    price:number
+}
+
+const menus:Menu[]= [];
+
 let users:{email:string;password:string}[] =[];
 
     try{
@@ -60,5 +67,13 @@ app.post('/login',(req:Request,res:Response)=>{
     // res.redirect("/");
 })
 
+app.post('/menu',(req:Request,res:Response)=>{
+    const {name,price} = req.body
+    if(!name || price === "undefied"){
+        return res.status(400).send("please fill fill the name and price");
+    }
+    menus.push({name,price});
+    res.status(200).send({menus})
+})
 
 app.listen(PORT,()=>console.log(`Server is listing on ${PORT}`))

@@ -1,10 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface MenuCategory{
-    id:number;
-    name:string;
-    isAavailable:boolean;
-}
+import { MenuCategory } from "../../types/menuCategory";
 
 interface MenuCategorySlice{
     menuCategories:MenuCategory[];

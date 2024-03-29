@@ -17,7 +17,8 @@ const NewMenu = ({newMenu,setNewMenu}:props) => {
             <TextField placeholder="name" sx={{width:"100%", mb:2}} 
                 onChange={(evt)=>setNewMenu({...newMenu,name:evt.target.value})}
             />
-            <TextField placeholder="price" 
+            <TextField placeholder="price"
+                type="number"
                 sx={{width:"100%"}}
                 onChange={(evt)=>setNewMenu({...newMenu,price:Number(evt.target.value)})}
             />
