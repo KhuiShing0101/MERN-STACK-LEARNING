@@ -16,6 +16,7 @@ const initialState:menuSlice={
 
 export const createMenu = createAsyncThunk("menu/createMenu",
     async(newMenu:NewMenuParams,thunkApi)=>{
+        const { onSuccess, ...payload } = newMenu;
         const response = await fetch("http://localhost:5000/menu",{
             method:"POST",
             headers:{
@@ -25,7 +26,8 @@ export const createMenu = createAsyncThunk("menu/createMenu",
         })
         const serverFromData = await response.json();
         const {menus} = serverFromData;
-        thunkApi.dispatch(setMenu(menus as Menu[]))
+        // thunkApi.dispatch(setMenu(menus as Menu[]))
+        onSuccess && onSuccess();
         return menus
     })
 

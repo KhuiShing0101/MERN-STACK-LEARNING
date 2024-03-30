@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import menuReducer from './slices/menuSlice'
 import menuCategoryReducer from './slices/menuCategorySlice'
 import userReducer from './slices/userSlice'
+import snackbarReducer from './slices/appSnackbarSlice'
 
 export const store = configureStore({
   reducer: {
     menu : menuReducer,
     menuCategory: menuCategoryReducer,
-    user : userReducer
+    user : userReducer,
+    snackbar: snackbarReducer
   },
 })
 

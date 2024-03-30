@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import { ReactNode } from "react";
 import TopBar from "./TopBar";
 import { SideBar } from "./SideBar";
+import AppSnackbar from "./AppSnackbar";
 
 
 interface props{
@@ -18,6 +19,7 @@ const accessToken = localStorage.getItem("token")
             {children}
           </Box>
       </Box>
+      <AppSnackbar/>
     </Box>
   )
 }
